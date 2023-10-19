@@ -17,14 +17,14 @@ mysql=MySQL(app)
 
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT']=465
-app.config['MAIL_USERNAME']='laytonmatheka7@gmail.com'
-app.config['MAIL_PASSWORD']='qamfnggyldkpbhje'
+app.config['MAIL_USERNAME']='kogkurgat@gmail.com'
+app.config['MAIL_PASSWORD']='ayfdzpbglzqkebop'
 app.config['MAIL_USE_TLS']=False
 app.config['MAIL_USE_SSL']=True
 mail=Mail(app)
 
 
-app.secret_key="layton"
+app.secret_key="tobby"
 
 #landing page
 @app.route('/')
@@ -118,7 +118,7 @@ def forgot():
         if result:
             token=secrets.token_hex(32)
             reset_link=url_for('reset',token=token,_external=True)
-            msg=Message(subject='Password Reset Request',sender='laytonmatheka7@gmail.com',recipients=[email])
+            msg=Message(subject='Password Reset Request',sender='kogkurgat@gmail.com',recipients=[email])
             msg.body=f'Click the following link to reset your password:{reset_link}'
             mail.send(msg)
             cur=mysql.connection.cursor()
